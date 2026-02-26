@@ -1,0 +1,66 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+html, body{
+     height: 100%;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: rgb(97, 0, 161);
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+     max-width: 650px;
+}
+
+.tabs-switch{
+     padding: 10px;
+}
+
+.tabs{
+     margin-bottom: 10px;
+}
+
+.tabs button{
+     border: none;
+     outline: none;
+     padding: 4px;
+     font-size: 20px;
+     cursor: pointer;
+     border-radius: 3px;
+     transition: background-color 0.3s linear, color 0.3s linear;
+     box-shadow: 2px 2px 5px 1px  rgb(0, 0, 0);
+}
+
+button:hover:not(.active){
+    background-color: rgb(168, 168, 168)
+}
+
+.tab.active{
+     background-color: rgba(0, 0, 0, 0.5);
+     color: #ffff;
+}
+
+.content{
+     background-color: rgb(187, 187, 187);
+     padding: 10px;
+     border-radius: 2px;
+}
+.content p{
+     color: black;
+     letter-spacing: 0.5px;
+     text-align: start;
+}
+
+.tab-content{
+     display: none;
+}
+
+.tab-content.active{
+     display: initial;
+}
