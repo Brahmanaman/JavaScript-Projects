@@ -39,7 +39,6 @@ document.addEventListener('click', function (event) {
 })
 
 function addtoCart(wine) {
-    debugger
     let isExist = cart.find(c => c.name == wine.name)
     if (isExist) {
         cart.find(c => c.name == wine.name).quantity++;
@@ -54,7 +53,7 @@ function updateCartUI() {
     cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0)
 
     if (cart.length === 0) {
-        cartEmpty.style.display = "block";
+        cartEmpty.style.display = "flex";
         cartItems.innerHTML = "";
         cartCount.style.opacity = 0;
         cartCount.style.transform = "scale(0)"
@@ -79,7 +78,21 @@ function updateCartUI() {
                                     <p>${wine.quantity}</p>
                                     <p>$ ${wine.quantity * wine.price}</p>
                                 </div>
+                                <button class="delete-btn" data-index="${idx}">Delete</button>
                             </div>`;
         cartItems.appendChild(div);
     })
+}
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains("delete-btn")) {
+        const idx = event.target.getAttribute("data-index")
+        removetoCart(cart[idx]);
+    }
+})
+
+function removetoCart(item) {
+    debugger
+    cart = cart.filter((x) => x.name != item.name)
+    updateCartUI();
 }
