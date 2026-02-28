@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddTocart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">✦ VINE</div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">Wine</a>
+            </li>
+            <li>
+                <a href="#">Beer</a>
+            </li>
+            <li>
+                <a href="#">Spitits</a>
+            </li>
+        </ul>
+        <button class="cart-btn" id="cartBtn" title="My Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Filter</div>
+                <div class="filter-item category active" style="margin-bottom: 5px;">Red Wine</div>
+                <div class="filter-item">Shiraz</div>
+                <div class="filter-item">Cabernet Sauvignon</div>
+                <div class="filter-item">Merlot</div>
+                <div class="filter-item">Pinot Noir</div>
+                <div class="filter-item">Rose</div>
+                <div class="filter-item">Grenache</div>
+                <div class="filter-item">Tempranillo</div>
+                <div class="filter-item">Sangiovese</div>
+                <div class="filter-item category">White Wine</div>
+                <div class="filter-item category">Champagne and Sparkling</div>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">My Bag</div>
+                <div class="cart-sidebar" id="cartSidebar">
+                    <div class="cart-empty" id="cartEmpty">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ddd" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 01-8 0" />
+                        </svg>
+                        Your bag is empty now.
+                    </div>
+                    <ul class="cart-items" id="cartItems"></ul>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div class="products" id="productsGrid"></div>
+        </main>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
