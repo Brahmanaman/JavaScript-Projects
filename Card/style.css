@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    transition: all 1s linear;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+span {
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+li {
+    list-style: none;
+    font-size: 1rem;
+}
+
+.container {
+    min-height: 550px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px 1px rgba(65, 65, 65, 0.516);
+    user-select: none;
+
+}
+
+.top {
+    height: 50%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottom {
+    height: 50%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modeDetail {
+    display: flex;
+    flex-direction: column;
+
+    .parentCompany {
+        font-weight: 100;
+    }
+}
+
+.model {
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    gap: 0.2rem;
+}
+
+.engine_mileage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.colors {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.colors {
+    span {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+    }
+
+    span:nth-child(1) {
+        background: red;
+    }
+
+    span:nth-child(2) {
+        background: blue;
+    }
+
+    span:nth-child(3) {
+        background: silver;
+    }
+}
+
+
+
+.pros_cons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pros ul>li,
+.cons ul>li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.pros ul>li::before {
+    content: "\eb7b";
+    font-family: "remixicon";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: green;
+    line-height: 0.8;
+    font-weight: 800;
+}
+
+.cons ul>li::before {
+    content: "\eb98";
+    font-family: "remixicon";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: red;
+    line-height: 0.8;
+    font-weight: 800;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+li {
+    letter-spacing: 0.5px;
+}
+
+.pros>h5,
+.cons>h5 {
+    padding-left: 20px;
+}
