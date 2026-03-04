@@ -12,12 +12,61 @@
     <div class="bubbles" id="bubbles"></div>
     <div class="card">
         <h1>⚖️ BMI Calculator</h1>
-        <p class="subtitle">Body Mass Index · Instant Health Insight</p>
+        <p class="subtitle">Body Mass Index. Instant Health Insight</p>
 
         <div class="toggle-wrap">
             <div class="toggle">
-                <button class="active" id="btnMetric">Metric</button>
-                <button id="btnImperical"">Imperial</button>
+                <button class="active" id="btnMetric" onclick="setUnit('metric')">Metric</button>
+                <button id="btnImperical" onclick="setUnit('imperical')">Imperial</button>
+            </div>
+        </div>
+
+        <!-- Height -->
+        <div class="input-group">
+            <label for="heightRow">Height</label>
+            <div class="input-row" id="heightRow">
+                <div class="input-box">
+                    <input type="number" id="heightcm" placeholder="70" min="1">
+                    <span>cm</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- weight -->
+        <div class="input-group">
+            <label for="weightkg">Weight</label>
+            <div class="input-row">
+                <div class="input-box" id="weightBox">
+                    <input type="number" id="weightkg" placeholder="50" min="1">
+                    <span id="weightUnit">kg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- age slider -->
+        <div class="input-group">
+            <label for="age">Age <span id="ageDisplay">2</span> YRS</label>
+            <div class="slider-wrap">
+                <input type="range" id="ageChange" min="2" value="2" max="100"
+                    oninput="document.getElementById('ageDisplay').textContent=this.value">
+                <div class="slider-labels">
+                    <span>2</span>
+                    <span>25</span>
+                    <span>50</span>
+                    <span>75</span>
+                    <span>100</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="calulate-bmi" onclick="calculateBMI()">Calculate bmi</button>
+
+        <div class="result" id="result">
+            <div class="result-inner" id="resultInner">
+                <div class="bmi-value" id="bmiValue"></div>
+                <div class="bmi-label" id="bmiLabel"></div>
+                <div class="bmi-desc" id="bmiDesc"></div>
+
             </div>
         </div>
     </div>

@@ -19,6 +19,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
     font-size: 62.5%;
+    font-family: Helvetica, sans-serif;
 }
 
 .bubbles {
@@ -61,21 +62,45 @@ body {
 
 .card {
     position: relative;
-    width: 600px;
+    width: 500px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    padding: 40px 20px;
+    padding: 40px;
     border-radius: 40px;
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {}
+
+    80% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 h1 {
+    text-align: center;
     color: #fff;
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     font-weight: 700;
     margin-bottom: 0.6rem;
@@ -85,19 +110,281 @@ h1 {
 .subtitle {
     text-align: center;
     color: rgba(255, 255, 255, 0.479);
-    font-size: 1rem;
-    margin-bottom: 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
 }
 
 .toggle-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2rem;
 }
 
 .toggle {
     background: rgba(0, 0, 0, 0.3);
     display: flex;
+    border-radius: 50px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.toggle button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 7px 22px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.toggle button.active {
+    background: linear-gradient(135deg, #63b3ed, #4299e1);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(99, 179, 237, 0.4);
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+label {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+
+}
+
+.input-row {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.input-box {
+    flex: 1;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.15);
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.input-box span {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.slider-wrap {
+    position: relative;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-appearance: none;
+    border-radius: 10px;
+    height: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
+    cursor: pointer;
+    background: linear-gradient(120deg, rgb(231, 41, 238), rgb(58, 44, 255));
+    box-shadow: 0 0 10px rgba(153, 201, 235, 0.5);
+    transition: transform 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.calulate-bmi {
+    border-radius: 50px;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #63b3ed, #4299e1);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(99, 179, 237, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calulate-bmi:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 14px rgba(99, 179, 237, 0.4);
+}
+
+.result {
+    margin-top: 2.4rem;
+    border-radius: 16px;
+    display: none;
+    animation: result-popup 0.3s ease;
+}
+
+.result.show {
+    display: block;
+}
+
+@keyframes result-popup {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result-inner {
+    padding: 2.2rem 4.4rem;
+    border: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.bmi-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #fff, #a0d0f5);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textup 0.6s ease;
+}
+
+@keyframes textup {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.bmi-label {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    animation: textup 0.6s ease;
+}
+
+.bmi-desc {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.underweight .bmi-label {
+    color: #76e4f7;
+}
+
+.underweight .gauge-fill {
+    background: linear-gradient(90deg, #76e4f7, #0bc5ea);
+}
+
+.underweight .gauge-pointer {
+    background: #76e4f7;
+}
+
+.normal .bmi-label {
+    color: #68d391;
+}
+
+.normal .gauge-fill {
+    background: linear-gradient(90deg, #68d391, #48bb78);
+}
+
+.normal .gauge-pointer {
+    background: #68d391;
+}
+
+.overweight .bmi-label {
+    color: #f6ad55;
+}
+
+.overweight .gauge-fill {
+    background: linear-gradient(90deg, #f6ad55, #ed8936);
+}
+
+.overweight .gauge-pointer {
+    background: #f6ad55;
+}
+
+.obese .bmi-label {
+    color: #fc8181;
+}
+
+.obese .gauge-fill {
+    background: linear-gradient(90deg, #fc8181, #f56565);
+}
+
+.obese .gauge-pointer {
+    background: #fc8181;
 }
