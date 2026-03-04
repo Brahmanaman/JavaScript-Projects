@@ -110,7 +110,7 @@ function showResult(bmi) {
     }
 
 
-    ///value mapping
+    const pct = Math.min(100, Math.max(0, ((bmi - 16) / 24) * 100));
 
     document.getElementById("bmiValue").textContent = result;
     document.getElementById("bmiLabel").textContent = category;
@@ -126,6 +126,11 @@ function showResult(bmi) {
     res.classList.remove('show');
     void res.offsetWidth;
     res.classList.add('show');
+
+    setTimeout(() => {
+        document.getElementById('gaugeFill').style.width = pct + '%';
+        document.getElementById('gaugePointer').style.left = pct + '%';
+    }, 100);
 
 
 }

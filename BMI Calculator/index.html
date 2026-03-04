@@ -45,9 +45,9 @@
 
         <!-- age slider -->
         <div class="input-group">
-            <label for="age">Age <span id="ageDisplay">2</span> YRS</label>
+            <label for="age">Age <span id="ageDisplay">25</span> YRS</label>
             <div class="slider-wrap">
-                <input type="range" id="ageChange" min="2" value="2" max="100"
+                <input type="range" id="ageChange" min="2" value="25" max="100"
                     oninput="document.getElementById('ageDisplay').textContent=this.value">
                 <div class="slider-labels">
                     <span>2</span>
@@ -65,6 +65,15 @@
             <div class="result-inner" id="resultInner">
                 <div class="bmi-value" id="bmiValue"></div>
                 <div class="bmi-label" id="bmiLabel"></div>
+                <div class="gauge">
+                    <div class="gauge-track">
+                        <div class="gauge-fill" id="gaugeFill"></div>
+                        <div class="gauge-pointer" id="gaugePointer"></div>
+                    </div>
+                    <div class="gauge-ticks">
+                        <span>16</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+                    </div>
+                </div>
                 <div class="bmi-desc" id="bmiDesc"></div>
 
             </div>

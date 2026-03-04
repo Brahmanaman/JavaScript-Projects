@@ -335,6 +335,48 @@ input[type="range"]::-webkit-slider-thumb:hover {
     animation: textup 0.6s ease;
 }
 
+.gauge {
+    margin-bottom: 14px;
+    animation: textup 0.6s ease;
+}
+
+.gauge-track {
+    height: 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.gauge-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.gauge-pointer {
+    position: absolute;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: left 0.8s cubic-bezier(0.34, 1.2, 0.64, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.gauge-ticks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.gauge-ticks span {
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
 .bmi-desc {
     color: rgba(255, 255, 255, 0.55);
     font-size: 0.8rem;
